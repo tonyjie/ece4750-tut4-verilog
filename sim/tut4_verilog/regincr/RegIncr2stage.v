@@ -9,6 +9,7 @@
 `define TUT4_VERILOG_REGINCR_REG_INCR_2STAGE_V
 
 `include "tut4_verilog/regincr/RegIncr.v"
+// `include "/home/jl4257/ece4750/tut4/sim/tut4_verilog/regincr/RegIncr.v"
 
 module tut4_verilog_regincr_RegIncr2stage
 (
@@ -30,11 +31,13 @@ module tut4_verilog_regincr_RegIncr2stage
     .out   (reg_incr_0_out)
   );
 
-  // ''' TUTORIAL TASK '''''''''''''''''''''''''''''''''''''''''''''''''''
-  // This model is incomplete. As part of the tutorial you will need to
-  // instantiate and connect the second stage of this two-stage
-  // registered incrementer here.
-  // '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  tut4_verilog_regincr_RegIncr reg_incr_1
+  (
+    .clk  (clk),
+    .reset (reset),
+    .in   (reg_incr_0_out),
+    .out  (out)
+  );
 
 endmodule
 
